@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: MSVC build active file",
+            "type": "shell",
+            // "command": "${workspaceFolder}/misc/build.bat", // This doesn't stop debugger on errors!
+            // "args": [],
+            "command": "cl",
+            "args": ["/std:c++latest", "/nologo","/EHsc","/FC","/diagnostics:column", "/MTd","/Oi","/Ox","/GR-","/Gm-","/EHa-","/Zi",
+                    "/Fobin\\SimpleRaytracer.obj", "/Fdbin\\2nd.pdb", "/Febin\\SimpleRaytracer.exe", "src\\main.cpp",
+                    "/link", "user32.lib", "gdi32.lib", "winmm.lib"],
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": false,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": true
+            },
+
+            "detail": "compiler: cl.exe",
+        }
+    ]
+}
